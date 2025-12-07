@@ -1,0 +1,28 @@
+{
+  "name": "akshat-telegram-ai-agent",
+  "version": "1.0.0",
+  "description": "Akshat's Personal AI Agent - A smart Telegram bot with routing logic",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "ai",
+    "agent",
+    "grok",
+    "news"
+  ],
+  "author": "Akshat",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.5",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
