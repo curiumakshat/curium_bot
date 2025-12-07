@@ -14,6 +14,8 @@ app.listen(PORT, () => console.log(`HTTP server running on port ${PORT}`));
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const { processMessage } = require('./agent');
+const { sendTypingThenMessage } = require('./telegramTyping');
+const agent = require('./agent');
 
 // Validate environment variables
 if (!process.env.TELEGRAM_BOT_TOKEN) {
@@ -93,13 +95,17 @@ bot.on('message', async (msg) => {
 
     try {
         // Process message through AI agent
-        const result = await processMessage(userMessage);
+        const result = await agent.processMessage(userMessage);
 
-        // Send response to user
-        bot.sendMessage(chatId, result.response, {
-            parse_mode: 'Markdown',
-            disable_web_page_preview: false
-        });
+        // send typing then reply
+        try {
+            await sendTypingThenMessage(process.env.TELEGRAM_TOKEN, chatId, result.response, {
+                parse_mode: 'Markdown' // optional
+            });
+        } catch (err) {
+            console.error('Failed to send reply with typing:', err);
+            // fallback: direct sendMessage via axios or your existing method
+        }
 
         // Handle escalation to Akshat
         if (result.action === 'ESCALATE_TO_AKSHAT') {
