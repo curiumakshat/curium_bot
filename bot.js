@@ -2,6 +2,13 @@
  * Akshat's Personal AI Agent - Telegram Bot
  * Main entry point
  */
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (_, res) => res.send("Bot is running"));
+
+app.listen(PORT);
 
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
