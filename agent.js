@@ -144,7 +144,7 @@ async function generateResponse(message, intent) {
  */
 async function callGeminiAPI(query) {
   try {
-    const model = process.env.GEMINI_MODEL || 'gemini-2.5-pro';
+    const model = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
     const apiKey = process.env.GEMINI_API_KEY;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 

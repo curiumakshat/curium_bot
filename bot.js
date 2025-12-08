@@ -99,7 +99,7 @@ bot.on('message', async (msg) => {
 
         // send typing then reply
         try {
-            await sendTypingThenMessage(process.env.TELEGRAM_TOKEN, chatId, result.response, {
+            await sendTypingThenMessage(process.env.TELEGRAM_BOT_TOKEN, chatId, result.response, {
                 parse_mode: 'Markdown' // optional
             });
         } catch (err) {
