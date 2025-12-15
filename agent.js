@@ -10,7 +10,7 @@ const AKSHAT_DATA = {
   about: `Akshat is a developer building automation + AI projects. He writes blogs about real-world automation workflows, posts tech content on Instagram, shares professional updates on LinkedIn, and builds hobby projects to showcase them.`,
 
   links: {
-    blog: 'http://curiumblogs.netlify.app/',
+    blog: 'http://curiumblogs.vercel.app/',
     instagram: 'https://www.instagram.com/curiumakshat/',
     linkedin: 'https://www.linkedin.com/in/akshat-raj-1266b6377/',
     projects: 'https://github.com/curiumakshat'
